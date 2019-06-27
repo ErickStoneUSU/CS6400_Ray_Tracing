@@ -112,10 +112,10 @@ public:
 
 	// modified input params
 	void read_ply(const std::string & filepath, 
-		std::shared_ptr<PlyData> vertices, 
-		std::shared_ptr<PlyData> normals, 
-		std::shared_ptr<PlyData> faces, 
-		std::shared_ptr<PlyData> texcoords)
+		std::shared_ptr<PlyData> & vertices, 
+		std::shared_ptr<PlyData> & normals, 
+		std::shared_ptr<PlyData> & faces, 
+		std::shared_ptr<PlyData> & texcoords)
 	{
 		try
 		{
@@ -140,16 +140,16 @@ public:
 			try { vertices = file.request_properties_from_element("vertex", { "x", "y", "z" }); }
 			catch (const std::exception & e) { std::cerr << "tinyply exception: " << e.what() << std::endl; }
 
-			try { normals = file.request_properties_from_element("vertex", { "nx", "ny", "nz" }); }
-			catch (const std::exception & e) { std::cerr << "tinyply exception: " << e.what() << std::endl; }
+			//try { normals = file.request_properties_from_element("vertex", { "nx", "ny", "nz" }); }
+			//catch (const std::exception & e) { std::cerr << "tinyply exception: " << e.what() << std::endl; }
 
-			try { texcoords = file.request_properties_from_element("vertex", { "u", "v" }); }
-			catch (const std::exception & e) { std::cerr << "tinyply exception: " << e.what() << std::endl; }
+			//try { texcoords = file.request_properties_from_element("vertex", { "u", "v" }); }
+			//catch (const std::exception & e) { std::cerr << "tinyply exception: " << e.what() << std::endl; }
 
 			// Providing a list size hint (the last argument) is a 2x performance improvement. If you have 
 			// arbitrary ply files, it is best to leave this 0. 
-			try { faces = file.request_properties_from_element("face", { "vertex_indices" }, 3); }
-			catch (const std::exception & e) { std::cerr << "tinyply exception: " << e.what() << std::endl; }
+			//try { faces = file.request_properties_from_element("face", { "vertex_indices" }, 3); }
+			//catch (const std::exception & e) { std::cerr << "tinyply exception: " << e.what() << std::endl; }
 
 			manual_timer read_timer;
 

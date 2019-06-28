@@ -27,11 +27,8 @@
 *.lib
 Debug
 packages
-.vs
+
 # Executables
 *.exe
 *.out
 *.app
-*.sln
-*.vcxproj*
-*.aps

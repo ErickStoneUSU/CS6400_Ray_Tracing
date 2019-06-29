@@ -16,5 +16,6 @@ public:
 public:
 	SceneDetails getDetails(string detailFile, SceneDetails& details);
 	void loadScene(SceneDetails details, Scene& scene);
+	void render(int xDim, int yDim);
 };
 

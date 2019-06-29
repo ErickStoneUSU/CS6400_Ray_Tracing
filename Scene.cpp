@@ -35,10 +35,24 @@ void Scene::loadScene(SceneDetails details, Scene & scene) {
 		string line;
 		SceneDetails details;
 		myFile >> line; // material of object
-		Item item = new Item();
-		item.material = Material();
-		scene.items.push_back(item);
+		//Item item = new Item();
+		//item.material = Material();
+		//scene.items.push_back(item);
 		myFile.close();
+	}
+}
+
+void Scene::render(int xDim, int yDim) {
+	// iterate over all of the pixels of the film
+	for (int y = 0; y < yDim; ++y) {
+		for (int x = 0; x < xDim; ++x) {
+			// take the needed steps to get the pixel at that time.
+			// loop over the objects and see if the bounding boxes are a hit
+			// see if the bounding box is in range of any of the lights
+			// if the bounding box hits a light, then check if the triangles on the bounding box are a hit
+			// if so, then check if the triangle is in contact with any of the lights
+
+		}
 	}
 }
 

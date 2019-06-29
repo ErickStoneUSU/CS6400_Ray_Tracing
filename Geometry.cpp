@@ -4,8 +4,7 @@
 #include <list> 
 using namespace std;
 
-class Geometry {
-	Point locale;
-	list<Point> vertices;
-	BoundingBox box;
-};
+// populate closest and furthest points from film
+float getDistanceForCloseness(Point filmPixelLocation, float m, float b) {
+
+}
